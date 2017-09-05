@@ -3,6 +3,7 @@ import sys
 
 imagePath = sys.argv[1]
 faceCascPath = "classifier/haarcascade_frontalface_default.xml"
+green = (0, 255, 0)
 
 faceCascade = cv2.CascadeClassifier(faceCascPath)
 
@@ -16,9 +17,9 @@ faces = faceCascade.detectMultiScale(
     minSize=(30, 30),
 )
 
-print("Found {0} faces!".format(len(faces)))
+print(f'Found {len(faces)} faces!')
 for (x, y, w, h) in faces:
-    cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+    cv2.rectangle(image, (x, y), (x+w, y+h), green, 2)
 
 cv2.imshow("Faces found", image)
 cv2.waitKey(0)
