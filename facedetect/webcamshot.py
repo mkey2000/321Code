@@ -2,7 +2,7 @@ import cv2
 import sys
 
 dev = sys.argv[1] if len(sys.argv) >= 2 else 0
-cap = cv2.VideoCapture(dev)
+cap = cv2.VideoCapture(int(dev))
 
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 800);
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 600);
